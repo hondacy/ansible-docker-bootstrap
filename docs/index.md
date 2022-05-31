@@ -6,6 +6,7 @@ To use:
 ```shell
 docker compose build
 docker compose up
+OR: docker compose up --build
 ```
 **note that on older systems you need to run:**
 ```shell
