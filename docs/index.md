@@ -15,21 +15,16 @@ docker-compose up
 ```
 3. Check that you have 3 containers running:
 - webapp
-- client1
-- client2
+- master
+- enemy
 
 
-```markdown
-Syntax highlighted code block
+For debuging the app container, you can run:
+```shell
+docker run --rm -it  --entrypoint /bin/bash webservice
+```
 
-# Header
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+For accessing the webapp, you can run:
+```
+curl webservice:8080
 ```

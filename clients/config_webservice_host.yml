@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  gather_facts: false
+  vars:
+   ansible_user: root
+   ansible_password: root
+   ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o  UserKnownHostsFile=/dev/null"
+  tasks:
+    - name: Display hostname
+      shell: "hostname"
+      register: remote_host_name
+    
+    - name: Display collected info
+      debug:
+        msg: "remote_host_name: {{ remote_host_name.stdout }}"
+...
