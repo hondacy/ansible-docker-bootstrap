@@ -1,3 +1,4 @@
 # ansible-docker-bootstrap
+An ansible based code to bootstrap lab environments
 
-This repo is used as a testing lab
+For usage and examples [visit here](https://hondacy.github.io/ansible-docker-bootstrap)
