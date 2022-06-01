@@ -1,0 +1,36 @@
+version: '3.9' #2.1'
+services:
+  webservice:
+    container_name: webservice
+    hostname: webservice
+    build: ./app
+    image: liquid-webapp:latest
+    ports:
+      - "8080:8080"
+      - "8081:5000"
+      - "22:22"
+    environment:
+      - "FLASK_PORT=8080"
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    stdin_open: false
+    tty: false
+
+  master:
+    container_name: master
+    hostname: master
+    build: ./clients
+    image: liquid-clients
+    volumes:
+      - ./clients:/opt/clients
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
+  enemy:
+    container_name: enemy
+    hostname: enemy
+    build: ./clients
+    image: liquid-clients
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
