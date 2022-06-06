@@ -9,9 +9,12 @@
   tasks:
     - name: Display hostname
       shell: "hostname"
-      register: remote_host_name
-    
+      register: remote_host_name 
+      
     - name: Display collected info
       debug:
         msg: "remote_host_name: {{ remote_host_name.stdout }}"
+           
+    - name: Block Enemy | add Ansib iptable rule
+      command: iptables -I INPUT 1 -i eth0 -p tcp --dport 8000 -s 172.7.0.9 -j DROP -m comment --comment "Block Enemy"
 ...
