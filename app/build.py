@@ -4,9 +4,16 @@ import helpers
 
 helpers.printMe("Starting!")
 
-mySet = {'New Orleans', 'Phoenix', 'Los Angeles', 'Phoenix'}
+mySet = {'Jerusalem', 'Tel-Aviv', 'Haifa', 'Hertzelia', 'Tel-Aviv'}
 helpers.printMe(mySet)
 
-adam = helpers.phones(phoneVersion='4', phoneOS='iOS')
+# Phone:
+adam_phone = helpers.phones(phoneVersion='4', phoneOS='iOS')
+print('  #> Adam phone  is:   ', adam_phone)
 
-print('adam is: ', adam)
+# Location:
+f = mySet.pop()
+f = mySet.pop()
+f = mySet.pop()
+adam_location = helpers.locations(Lat='32.16203973676016', Long='34.81067665423914', City=f)
+print('  #> Adam location is: ', adam_location)
